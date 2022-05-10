@@ -1,0 +1,4 @@
+Blog Webiste
+
+// run server in terminal
+python manage.py runsever
