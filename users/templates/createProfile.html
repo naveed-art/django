@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+<hr>
+<div class="container">
+    <form action="" method ="POST">
+
+        {% csrf_token %}
+        {{form.as_p}}
+    </form>
+</div>

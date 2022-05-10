@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+  <br><br>
+<h1>Detail View</h1>
+<hr>
+
+
+{% if user.is_authenticated %}
+
+<div class="jumbotron">
+    <h1 class="display-4">{{project.title}}</h1>
+    <p class="lead">{{project.content}}</p>
+    <hr class="my-4">
+    <p>From -{{project.author|title}}</p>
+    {{project.date_posted}}
+    {% if user.id == project.author.id %}
+<hr>
+<a class="btn btn-dark btn-lg" href="{% url 'updatePost' project.id%} " role="button">Edit</a>
+<a class="btn btn-dark btn-lg" href="{% url 'deletePost' project.id%}" role="button">Delete</a>
+
+{% endif %}
+  </div>
+  {% endif %}
+
+
+
+{% comment %} <h2> Title: {{project.title}} </h2> - {{project.date_posted}} <br><br>
+<p> About: {{project.content}} </p><br> 
+Author: {{project.author}} <br>
+{% if user.id == project.author.id %}
+<hr>
+<a href="#">Edit</a>
+{% endif %}
+<hr><br>
+
+ {% endcomment %}
+</div>
+
+{% endblock content %}

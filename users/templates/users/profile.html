@@ -1,0 +1,42 @@
+{% extends 'main.html' %} {% block content %} {% comment %}
+<h1>Hello {{user.username|title}}</h1>
+<img src="{{user.profile.image.url}}" width="640" /> {% endcomment %}
+<br />
+<div class="container">
+
+
+      <div class="row">
+        <div class="col"></div>
+
+        <div class="col-6">
+          <div class="card-deck">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{{user.profile.image.url}}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{user.username|title}}</h5>
+                {% comment %}
+                <p class="card-text">
+                  This card has supporting text below as a natural lead-in to
+                  additional content.
+                </p>
+                {% endcomment %}
+                <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+                {% comment %} <a class="btn btn-dark btn-lg" href="{% url 'createProfile' %} " role="button">Edit</a> {% endcomment %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+       
+    
+  </div>
+
+  {% endblock content %}
+</div>

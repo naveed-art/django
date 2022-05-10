@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+    <br><br>
+
+
+<form action="" method="POST">
+    {% csrf_token %} 
+    {% comment %} <p>Do you want to delete {{project}} ??</p><br>
+    <a href=" {% url 'about' project.id%} ">Go back</a><br>
+    <input type="submit" value="Delete"> {% endcomment %}
+
+    <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">About -{{project}}</h5>
+          <p class="card-text">Do you want to Delete {{project}} ??</p>
+          <a href="{% url 'about' project.id%} " class="btn btn-light">Go Back</a>    <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+
+
+        </div>
+      </div>
+</form> 
+</div>
+{% endblock content %}

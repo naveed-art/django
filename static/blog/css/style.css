@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(202, 202, 202);
+    color: rgb(0, 0, 0);
+}
+.card{
+    background-color: rgb(148, 148, 148);
+}
+.blockquote-footer{
+    color: rgb(48, 48, 48);
+}
+a{
+    color: black;
+}
+.lead{
+    color: black;
+}

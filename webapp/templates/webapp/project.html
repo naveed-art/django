@@ -1,0 +1,45 @@
+{% extends 'main.html' %} {% block content %}
+{% load static %}
+<div class="container">
+  {% if user.is_authenticated %}
+
+  {% else %}
+  <div class="container">
+  <br><br>
+  <h3>Welcome to blog Post</h3><br>
+  {% comment %} <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="{% static 'blog/images/blog.jpg' %} " height="400px" class="d-block w-100" alt="...">
+      </div>
+    </div> {% endcomment %}
+  <br>
+    <p>
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+  It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+   publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </p>
+  </div>
+  {% endif %}
+
+  {% if user.is_authenticated %}
+  <br><br>
+  <h2>Here is all Blog posts</h2>
+  <hr />
+  {% for x in post %}
+
+  
+<div class="jumbotron">
+  <h1 class="display-4">{{x.title}}</h1>
+  <p class="lead">{{x.content|safe|truncatewords:"50"}} <a href="{% url 'about' x.id%}">  more read...</a></p>
+  <hr class="my-4">
+  <p>From -{{x.author|title}}</p>
+  {{x.date_posted}}
+</div>
+  <br />
+{% endfor %} {% endif %}
+</div>
+{% endblock content %}
